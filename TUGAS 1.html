@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHAIRUL AKBAR</title>
+    <script>
+        function sapaPengguna() {
+            // Mengambil nama dari input
+            var nama = document.getElementById("nama").value;
+            
+            // Menampilkan pesan sapaan
+            document.getElementById("pesan").innerHTML = "Halo, " + nama + "! Selamat datang!";
+        }
+    </script>
+</head>
+<body>
+    <h1>Program Menyapa Pengguna</h1>
+   
+    <label for="nama">Masukkan nama Anda: </label>
+    <input type="text" id="nama" name="nama">
+    <button onclick="sapaPengguna()">Selanjutnya</button>
+    <p id="pesan"></p>
+</body>
+</html>

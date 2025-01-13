@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHAIRUL AKBAR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hitung Luas Persegi Panjang</h2>
+        <form id="luasForm">
+            <label for="panjang">Panjang (meter):</label>
+            <input type="number" id="panjang" placeholder="Masukkan panjang" required>
+
+            <label for="lebar">Lebar (meter):</label>
+            <input type="number" id="lebar" placeholder="Masukkan lebar" required>
+
+            <button type="button" onclick="hitungLuas()">Hitung Luas</button>
+        </form>
+
+        <div class="result" id="hasil"></div>
+    </div>
+
+    <script>
+        function hitungLuas() {
+            // Ambil nilai panjang dan lebar dari input
+            const panjang = parseFloat(document.getElementById('panjang').value);
+            const lebar = parseFloat(document.getElementById('lebar').value);
+
+            // Periksa apakah input valid
+            if (isNaN(panjang) || isNaN(lebar) || panjang <= 0 || lebar <= 0) {
+                document.getElementById('hasil').textContent = "Masukkan panjang dan lebar yang valid!";
+                return;
+            }
+
+            // Hitung luas
+            const luas = panjang * lebar;
+
+            // Tampilkan hasil
+            document.getElementById('hasil').textContent = `Luas persegi panjang adalah: ${luas} m²`;
+        }
+    </script>
+</body>
+</html>
